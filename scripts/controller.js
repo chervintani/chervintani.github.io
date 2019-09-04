@@ -56,3 +56,7 @@ $(document).on("click",'#connectBtn', function () {
   })
 
 })
+
+$('#delete').on("click",function(){
+  $('#table').empty();
+})

@@ -1,9 +1,10 @@
 <html>
+
 <head>
   <title>Cherv mows</title>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/locale/af.js"></script> -->
+  <script src="https://kit.fontawesome.com/a1813e4a30.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <style>
@@ -34,19 +35,7 @@ td {
   text-overflow: ellipsis; 
 }
 
-.btn-group button {
-  background-color: #4CAF50; /* Green background */
-  border: 1px solid green; /* Green border */
-  color: white; /* White text */
-  padding: 10px 24px; /* Some padding */
-  cursor: pointer; /* Pointer/hand icon */
-  width: 50%; /* Set a width if needed */
-  display: block; /* Make the buttons appear below each other */
-}
 
-.btn-group button:not(:last-child) {
-  border-bottom: none; /* Prevent double borders */
-}
 </style>
 
 <body>
@@ -56,7 +45,9 @@ td {
   </nav>
 
   <div class="jumbotron text-center">
-
+    <h5>Powered by:</h5>
+    <img src="https://mosquitto.org/images/mosquitto-text-side-28.png">
+    <br><br>
     <div class="card-deck">
       <div class="card">
         <div class="card-header" style="background: #428eff; color: white">Broker</div>
@@ -65,8 +56,8 @@ td {
             <div class="form-group row">
               <label for="email_address" class="col-md-4 col-form-label text-md-right"><b>Address: </b></label>
               <div class="col-md-6">
-                <input type="text" id="broker" class="form-control" name="email-address" value="ws://broker.hivemq.com:8000/mqtt"
-                  id="address">
+                <input type="text" id="broker" class="form-control" name="email-address" value="wss://test.mosquitto.org:8081/mqtt"
+                  id="address" disabled>
               </div>
             </div>
 
@@ -141,13 +132,16 @@ td {
         <div class="card">
           <div class="card-header" style="background: #428eff; color: white">Incoming messsages</div>
           <div class="card-body">
-            <table id="table">
-              <tr>
+            <table>
+              <tr style="background: #26548c; color: white">
                 <th>Topic</th>
                 <th>Payload</th>
                 <th>Time Stamp</th>
               </tr>
-            </table>
+              <tbody id="table">
+              </tbody>
+            </table><br>
+            <button type="button" class="btn btn-danger" id="delete"><i class="far fa-trash-alt"></i> Clear all</button>
           </div>
         </div>
       </div>
