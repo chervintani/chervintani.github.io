@@ -1,0 +1,163 @@
+<html>
+
+<head>
+  <title>Cherv mows</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/locale/af.js"></script> -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<style>
+  .navbar-text {
+  color: white;
+}
+  table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  border: 1px solid #ddd;
+}
+
+th, td {
+  text-align: left;
+  padding: 16px;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2
+}
+
+td {
+  white-space: nowrap;
+  overflow: hidden;
+  width: 70%;
+  height: 3px;
+  text-overflow: ellipsis; 
+}
+
+.btn-group button {
+  background-color: #4CAF50; /* Green background */
+  border: 1px solid green; /* Green border */
+  color: white; /* White text */
+  padding: 10px 24px; /* Some padding */
+  cursor: pointer; /* Pointer/hand icon */
+  width: 50%; /* Set a width if needed */
+  display: block; /* Make the buttons appear below each other */
+}
+
+.btn-group button:not(:last-child) {
+  border-bottom: none; /* Prevent double borders */
+}
+</style>
+
+<body>
+  <!-- Image and text -->
+  <nav class="navbar navbar-dark bg-primary sticky-top">
+    <h2 class="navbar-text text-center">MQTT over Web Socket</h2>
+  </nav>
+
+  <div class="jumbotron text-center">
+
+    <div class="card-deck">
+      <div class="card">
+        <div class="card-header" style="background: #428eff; color: white">Broker</div>
+        <div class="card-body">
+          <form>
+            <div class="form-group row">
+              <label for="email_address" class="col-md-4 col-form-label text-md-right"><b>Address: </b></label>
+              <div class="col-md-6">
+                <input type="text" id="broker" class="form-control" name="email-address" value="ws://broker.hivemq.com:8000/mqtt"
+                  id="address">
+              </div>
+            </div>
+
+            <div class="col-md-6 offset-md-5">
+              <button type="button" class="btn btn-success" id="connectBtn">
+                Connect
+              </button>&nbsp&nbsp&nbsp&nbsp
+              <button type="button" class="btn btn-danger" id="disconnectBtn">
+                Disconnect
+              </button>
+            </div><br>
+
+            <div class="form-group row">
+              <label class="col-md-4 col-form-label text-md-right"><b>Status:</b></label>
+              <div class="col-md-6">
+                <input type="text" id="status" class="form-control" name="email-address" disabled>
+              </div>
+            </div>
+
+          </form>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header" style="background: #428eff; color: white">Publish</div>
+        <div class="card-body">
+          <form>
+            <div class="form-group row">
+              <label for="email_address" class="col-md-4 col-form-label text-md-right"><b>Topic: </b></label>
+              <div class="col-md-6">
+                <input type="text" id="topic" class="form-control" name="email-address" autofocus>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="email_address" class="col-md-4 col-form-label text-md-right"><b>Payload: </b></label>
+              <div class="col-md-6">
+                <input type="text" id="payload" class="form-control" name="email-address" autofocus>
+              </div>
+            </div>
+            <div class="col-md-6 offset-md-6">
+              <button type="button" class="btn btn-warning" id="publishBtn">
+                Publish
+              </button>
+            </div><br>
+          </form>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header" style="background: #428eff; color: white">Subscribe</div>
+        <div class="card-body">
+          <form>
+            <div class="form-group row">
+              <label for="email_address" class="col-md-4 col-form-label text-md-right"><b>Topic: </b></label>
+              <div class="col-md-6">
+                <input type="text" id="subscriber" class="form-control" name="email-address">
+              </div>
+            </div>
+            <div class="col-md-6 offset-md-5">
+              <button type="button" class="btn btn-success" id="subscribeBtn">
+                Subscribe
+              </button>&nbsp&nbsp&nbsp&nbsp
+              <button type="button" class="btn btn-danger" id="unsubscribeBtn">
+                Unsubscribe
+              </button>
+            </div><br>
+          </form>
+        </div>
+      </div>
+    </div>
+    <br>
+    <div class="row justify-content-center" id="subscribe">
+      <div class="col-md-8">
+        <div class="card">
+          <div class="card-header" style="background: #428eff; color: white">Incoming messsages</div>
+          <div class="card-body">
+            <table id="table">
+              <tr>
+                <th>Topic</th>
+                <th>Payload</th>
+                <th>Time Stamp</th>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.js" integrity="sha256-H9jAz//QLkDOy/nzE9G4aYijQtkLt9FvGmdUTwBk6gs="
+  crossorigin="anonymous"></script>
+<script src="scripts/browserMqtt.js"></script>
+<script src="scripts/controller.js"></script>
+
+</html>
