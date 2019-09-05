@@ -1,0 +1,43 @@
+body {
+    font-family: 'Comfortaa';
+}
+.navbar-text {
+  color: white;
+}
+  table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  border: 1px solid #ddd;
+  /* table-layout: fixed; */
+
+}
+
+th, td {
+  text-align: left;
+  padding: 16px;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2
+}
+
+td {
+  white-space: nowrap;
+  overflow: hidden;
+  width: 70%;
+  height: 3px;
+  text-overflow: ellipsis; 
+  word-wrap: break-word;
+max-width: 450px;
+}
+
+h2 {
+  color: white;
+  padding: 10px;
+  text-align: center;
+}
+
+.mh-100 {
+    min-height: 100vh;
+}

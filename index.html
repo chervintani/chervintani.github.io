@@ -1,49 +1,21 @@
 <html>
 
 <head>
-  <title>Cherv mows</title>
+  <title>ChervMOWS</title>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
   <script src="https://kit.fontawesome.com/a1813e4a30.js"></script>
+  <link href='https://fonts.googleapis.com/css?family=Comfortaa' rel='stylesheet'>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="style.css" rel="stylesheet">
 </head>
-<style>
-  .navbar-text {
-  color: white;
-}
-  table {
-  border-collapse: collapse;
-  border-spacing: 0;
-  width: 100%;
-  border: 1px solid #ddd;
-}
 
-th, td {
-  text-align: left;
-  padding: 16px;
-}
-
-tr:nth-child(even) {
-  background-color: #f2f2f2
-}
-
-td {
-  white-space: nowrap;
-  overflow: hidden;
-  width: 70%;
-  height: 3px;
-  text-overflow: ellipsis; 
-}
-
-
-</style>
 
 <body>
   <!-- Image and text -->
   <nav class="navbar navbar-dark bg-primary sticky-top">
-    <h2 class="navbar-text text-center">MQTT over Web Socket</h2>
+    <h2><b>MQTT over Web Socket</h2>
   </nav>
-
   <div class="jumbotron text-center">
     <h5>Powered by:</h5>
     <img src="https://mosquitto.org/images/mosquitto-text-side-28.png">
@@ -57,17 +29,14 @@ td {
               <label for="email_address" class="col-md-4 col-form-label text-md-right"><b>Address: </b></label>
               <div class="col-md-6">
                 <input type="text" id="broker" class="form-control" name="email-address" value="wss://test.mosquitto.org:8081/mqtt"
-                  id="address" disabled>
+                  id="address">
               </div>
             </div>
 
             <div class="col-md-6 offset-md-5">
-              <button type="button" class="btn btn-success" id="connectBtn">
-                Connect
-              </button>&nbsp&nbsp&nbsp&nbsp
-              <button type="button" class="btn btn-danger" id="disconnectBtn">
-                Disconnect
-              </button>
+              <button type="button" class="btn btn-success" id="connectBtn"><i class="fas fa-plug"></i> Connect</button>&nbsp&nbsp&nbsp&nbsp
+              <button type="button" class="btn btn-danger" id="disconnectBtn"><i class="far fa-times-circle"></i>
+                Disconnect</button>
             </div><br>
 
             <div class="form-group row">
@@ -97,9 +66,7 @@ td {
               </div>
             </div>
             <div class="col-md-6 offset-md-6">
-              <button type="button" class="btn btn-warning" id="publishBtn">
-                Publish
-              </button>
+              <button type="button" class="btn btn-warning" id="publishBtn"><i class="far fa-paper-plane"></i> Publish</button>
             </div><br>
           </form>
         </div>
@@ -115,12 +82,9 @@ td {
               </div>
             </div>
             <div class="col-md-6 offset-md-5">
-              <button type="button" class="btn btn-success" id="subscribeBtn">
-                Subscribe
-              </button>&nbsp&nbsp&nbsp&nbsp
-              <button type="button" class="btn btn-danger" id="unsubscribeBtn">
-                Unsubscribe
-              </button>
+              <button type="button" class="btn btn-success" id="subscribeBtn"><i class="far fa-bell"></i> Subscribe</button>&nbsp&nbsp&nbsp&nbsp
+              <button type="button" class="btn btn-danger" id="unsubscribeBtn"><i class="far fa-bell-slash"></i>
+                Unsubscribe</button>
             </div><br>
           </form>
         </div>
@@ -148,8 +112,19 @@ td {
     </div>
   </div>
 </body>
+<footer class="bg-white">
+  <div class="container py-3">
+    <ul class="list-inline text-center">
+      <li class="list-inline-item lead"><b>Created by: Chervz@2021</b></li><br>
+      <li class="list-inline-item"><a href="https://passerellesnumeriques.org">
+          <h5> Passerelles Numeriques Philippines</h5>
+        </a></li>
+    </ul>
+  </div>
+</footer>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.js" integrity="sha256-H9jAz//QLkDOy/nzE9G4aYijQtkLt9FvGmdUTwBk6gs="
   crossorigin="anonymous"></script>
 <script src="scripts/browserMqtt.js"></script>
 <script src="scripts/controller.js"></script>
+
 </html>
