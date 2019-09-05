@@ -1,6 +1,10 @@
 body {
     font-family: 'Comfortaa';
 }
+
+#header {
+  text-decoration: none;
+}
 .navbar-text {
   color: white;
 }
