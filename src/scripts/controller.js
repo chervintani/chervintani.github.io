@@ -5,9 +5,13 @@ $(document).on("click",'#connectBtn', function () {
   client.on("connect", function () {
     $('#status').val("Connected!").css("color", "black").css("background-color", "#04cf55");
     console.log("connected");
+    Swal.fire({
+      type: 'success',
+      title: 'Connected Successfully!',
+    })
     $('#connectBtn').prop("disabled", true);
+    $('#disconnectBtn').prop("disabled", false);
     client.on("message", function (topic, payload) {
-      // console.log([topic, payload].join(": "));
       //adding to table the topic and payload
       $('#table').append('<tr><td id="topicLng">' + topic + '</td><td id="payloadLng">'+ payload + '</td><td id="time">' + moment().format('MMMM Do YYYY, h:mm:ss a') + '</td></tr>');
       console.log("Received { topic: " + topic + "; payload: " + payload + " }");
@@ -15,8 +19,14 @@ $(document).on("click",'#connectBtn', function () {
   })
 
   $('#disconnectBtn').on("click", function () {
+    Swal.fire({
+      type: 'warning',
+      iconColor: 'red',
+      title: 'Disconnected!',
+    })
     client.end();
     $('#connectBtn').prop("disabled", false);
+    $(this).prop("disabled", true);
     $('#status').val("Disconnected!").css("color", "black").css("background-color", "#c71906");
     console.log("Disconnected");
   })
@@ -25,7 +35,10 @@ $(document).on("click",'#connectBtn', function () {
 
   $('#publishBtn').on("click", function () {
     if ($('#topic').val().length == 0) {
-      alert("Please enter a topic");
+      Swal.fire({
+        type: 'error',
+        title: 'Please enter a topic!',
+      })
     } else {
       client.publish($('#topic').val(), "Cherv: "+$('#payload').val(), function () {
         console.log("Published { topic: " + $('#topic').val()
@@ -36,8 +49,15 @@ $(document).on("click",'#connectBtn', function () {
 
   $(document).on("click", '#subscribeBtn', function () {
     if ($('#subscriber').val().length == 0) {
-      alert("Please subscribe a topic");
+      Swal.fire({
+        type: 'error',
+        title: 'Please subscribe a topic!',
+      })
     } else {
+      Swal.fire({
+        type: 'success',
+        title: 'Subscribed!',
+      })
       client.subscribe($('#subscriber').val(), function () {
         console.log("Subscribed")
         $('#subscriber').prop('disabled', true);
