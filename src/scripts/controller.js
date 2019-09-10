@@ -13,7 +13,7 @@ $(document).on("click",'#connectBtn', function () {
     $('#disconnectBtn').prop("disabled", false);
     client.on("message", function (topic, payload) {
       //adding to table the topic and payload
-      $('#table').append('<tr><td id="topicLng">' + topic + '</td><td id="payloadLng">'+ payload + '</td><td id="time">' + moment().format('MMMM Do YYYY, h:mm:ss a') + '</td></tr>');
+      $('#table').prepend('<tr><td id="topicLng">' + topic + '</td><td id="payloadLng">'+ payload + '</td><td id="time">' + moment().format('MMMM Do YYYY, h:mm:ss a') + '</td></tr>');
       console.log("Received { topic: " + topic + "; payload: " + payload + " }");
     })
   })
