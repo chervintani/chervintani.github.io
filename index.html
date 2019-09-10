@@ -22,7 +22,7 @@
   </nav>
   <div class="jumbotron text-center">
     <h5>Powered by:</h5>
-    <img src="https://mosquitto.org/images/mosquitto-text-side-28.png">
+    <img src="https://mosquitto.org/images/mosquitto-text-side-28.png" style='width:100%;' border="0" alt="Null">
     <br><br>
     <div class="card-deck">
       <div class="card">
@@ -100,16 +100,18 @@
         <div class="card">
           <div class="card-header" style="background: #428eff; color: white">Incoming messsages</div>
           <div class="card-body">
-            <table>
-              <tr style="background: #26548c; color: white">
-                <th>Topic</th>
-                <th>Payload</th>
-                <th>Time Stamp</th>
-              </tr>
-              <tbody id="table">
-              </tbody>
-            </table><br>
-            <button type="button" class="btn btn-danger" id="delete"><i class="far fa-trash-alt"></i> Clear all</button>
+            <div style="overflow-x:auto;">
+              <table>
+                <tr style="background: #26548c; color: white">
+                  <th>Topic</th>
+                  <th>Payload</th>
+                  <th>Time Stamp</th>
+                </tr>
+                <tbody id="table">
+                </tbody>
+              </table><br>
+              <button type="button" class="btn btn-danger" id="delete"><i class="far fa-trash-alt"></i> Clear all</button>
+            </div>
           </div>
         </div>
       </div>
