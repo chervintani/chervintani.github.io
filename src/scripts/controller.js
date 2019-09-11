@@ -60,9 +60,7 @@ $(document).on("click",'#connectBtn', function () {
       })
       client.subscribe($('#subscriber').val(), function () {
         console.log("Subscribed")
-        $('#subscriber').prop('disabled', true);
       })
-      $(this).prop('disabled', true);
     }
   })
 
