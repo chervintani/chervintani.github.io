@@ -69,8 +69,6 @@ $(document).on("click",'#connectBtn', function () {
       console.log("Ended");
     });
     
-    $('#subscriber').prop('disabled', false);
-    $('#subscribeBtn').prop('disabled', false);
   })
 
 })
