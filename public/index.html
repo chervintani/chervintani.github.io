@@ -24,99 +24,182 @@
     <h5>Powered by:</h5>
     <img src="https://mosquitto.org/images/mosquitto-text-side-28.png" border="0" alt="Null">
     <br><br>
-    <div class="card-deck">
-      <div class="card">
-        <div class="card-header" style="background: #428eff; color: white">Broker</div>
-        <div class="card-body">
-          
-          <form>
-            <div class="form-group row">
-              <label for="email_address" class="col-md-4 col-form-label text-md-right"><b>Address: </b></label>
-              <div class="col-md-6">
-                <input type="text" id="broker" class="form-control" name="email-address" value="wss://test.mosquitto.org:8081/mqtt"
-                  id="address">
+    <div class="container">
+      <table>
+        <!-- <tr>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Points</th>
+        </tr> -->
+        <tr>
+          <td>
+            <div class="card">
+              <div class="card-header" style="background: #428eff; color: white">Jane|Renan</div>
+              <div class="card-body">
+                  <h5>Temperature:</h5>
+                  <h6 id="yot">12354.12</h6>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-header" style="background: #428eff; color: white">VACANT</div>
+              <div class="card-body">
+                <h5>VACANT</h5>
               </div>
             </div>
 
-            <div class="col-md-6 offset-md-5">
-              <button type="button" class="btn btn-success" id="connectBtn"><i class="fas fa-plug"></i> Connect</button>&nbsp&nbsp&nbsp&nbsp
-              <button type="button" class="btn btn-danger" id="disconnectBtn"><i class="far fa-times-circle"></i>
-                Disconnect</button>
-            </div><br>
-
-            <div class="form-group row">
-              <label class="col-md-4 col-form-label text-md-right"><b>Status:</b></label>
-              <div class="col-md-6">
-                <input type="text" id="status" class="form-control" name="email-address" disabled>
+          </td>
+          <td>
+            <div class="card">
+              <div class="card-header" style="background: #428eff; color: white">Jessa|Geneva</div>
+              <div class="card-body">
+                  <h5>Temperature:</h5>
+                  <h6 id="jess">12354.12</h6>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-header" style="background: #428eff; color: white">Lalaine|Jakeniel</div>
+              <div class="card-body">
+                  <h5>Temperature:</h5>
+                  <h6 id="ling">12354.12</h6>
+              </div>
+            </div>
+          </td>
+          <td>
+            <div class="card">
+              <div class="card-header" style="background: #428eff; color: white">VACANT</div>
+              <div class="card-body">
+                <h5>VACANT</h5>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-header" style="background: #428eff; color: white">VACANT</div>
+              <div class="card-body">
+                <h5>VACANT</h5>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="card">
+              <div class="card-header" style="background: #428eff; color: white">Princess|Gigante</div>
+              <div class="card-body">
+                  <h5>Temperature:</h5>
+                  <h6 id="twing">12354.12</h6>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-header" style="background: #428eff; color: white">Ivy|Marion</div>
+              <div class="card-body">
+                  <h5>Temperature:</h5>
+                  <h6 id="byang">12354.12</h6>
               </div>
             </div>
 
-          </form>
-        </div>
-      </div>
-      <div class="card">
-        <div class="card-header" style="background: #428eff; color: white">Publish</div>
-        <div class="card-body">
-          <form>
-            <div class="form-group row">
-              <label for="email_address" class="col-md-4 col-form-label text-md-right"><b>Topic: </b></label>
-              <div class="col-md-6">
-                <input type="text" id="topic" class="form-control" name="email-address" autofocus>
+          </td>
+          <td>
+            <div class="card">
+              <div class="card-header" style="background: #428eff; color: white">VACANT</div>
+              <div class="card-body">
+
+
+                <h5>test</h5>
+
               </div>
             </div>
-            <div class="form-group row">
-              <label for="email_address" class="col-md-4 col-form-label text-md-right"><b>Payload: </b></label>
-              <div class="col-md-6">
-                <input type="text" id="payload" class="form-control" name="email-address" autofocus>
+            <div class="card">
+              <div class="card-header" style="background: #428eff; color: white">Chervin|Mellyne</div>
+              <div class="card-body">
+                  <h5>Temperature:</h5>
+                  <h6 id="chervz">12354.12</h6>
               </div>
             </div>
-            <div class="col-md-6 offset-md-6">
-              <button type="button" class="btn btn-warning" id="publishBtn"><i class="far fa-paper-plane"></i> Publish</button>
-            </div><br>
-          </form>
-        </div>
-      </div>
-      <div class="card">
-        <div class="card-header" style="background: #428eff; color: white">Subscribe</div>
-        <div class="card-body">
-          <form>
-            <div class="form-group row">
-              <label for="email_address" class="col-md-4 col-form-label text-md-right"><b>Topic: </b></label>
-              <div class="col-md-6">
-                <input type="text" id="subscriber" class="form-control" name="email-address">
+          </td>
+          <td>
+            <div class="card">
+              <div class="card-header" style="background: #428eff; color: white">Jonathan&Grace</div>
+              <div class="card-body">
+                  <h5>Temperature:</h5>
+                  <h6 id="tibs">12354.12</h6>
               </div>
             </div>
-            <div class="col-md-6 offset-md-5">
-              <button type="button" class="btn btn-success" id="subscribeBtn"><i class="far fa-bell"></i> Subscribe</button>&nbsp&nbsp&nbsp&nbsp
-              <button type="button" class="btn btn-danger" id="unsubscribeBtn"><i class="far fa-bell-slash"></i>
-                Unsubscribe</button>
-            </div><br>
-          </form>
-        </div>
-      </div>
-    </div>
-    <br>
-    <div class="row justify-content-center" id="subscribe">
-      <div class="col-md-8">
-        <div class="card">
-          <div class="card-header" style="background: #428eff; color: white">Incoming messsages</div>
+            <div class="card">
+              <div class="card-header" style="background: #428eff; color: white">Irish|Redgie</div>
+              <div class="card-body">
+                  <h5>Temperature:</h5>
+                  <h6 id="rish">12354.12</h6>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="card">
+              <div class="card-header" style="background: #428eff; color: white">Jerome&Avila</div>
+              <div class="card-body">
+                  <h5>Temperature:</h5>
+                  <h6 id="burce">12354.12</h6>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-header" style="background: #428eff; color: white">Morre&Lorly</div>
+              <div class="card-body">
+                  <h5>Temperature:</h5>
+                  <h6 id="lor">12354.12</h6>
+              </div>
+            </div>
+          </td>
+          <td>
+            <div class="card">
+              <div class="card-header" style="background: #428eff; color: white">VACANT</div>
+              <div class="card-body">
+                  <h5>VACANT</h5>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-header" style="background: #428eff; color: white">Patrick|Hannah</div>
+              <div class="card-body">
+                <h5>Temperature:</h5>
+                <h6 id="pat">12354.12</h6>
+              </div>
+            </div>
+          </td>
+          <td>
+            <div class="card">
+              <div class="card-header" style="background: #428eff; color: white">Leonilo|Chilla</div>
+              <div class="card-body">
+                <h5>Temperature:</h5>
+                <h6 id="yol">12354.12</h6>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-header" style="background: #428eff; color: white">VACANT</div>
+              <div class="card-body">
+
+
+                <h5>VACANT</h5>
+
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <th>Row 1</th>
+          <th>Row 2</th>
+          <th>Row 3</th>
+        </tr>
+      </table>
+      <center><br>
+        <div class="card" id="card">
+          <div class="card-header" style="background: #39ad39; color: white">Teacher's Table</div>
           <div class="card-body">
-            <div style="overflow-x:auto;">
-              <table>
-                <tr style="background: #26548c; color: white">
-                  <th>Topic</th>
-                  <th>Payload</th>
-                  <th>Time Stamp</th>
-                </tr>
-                <tbody id="table">
-                </tbody>
-              </table><br>
-              <button type="button" class="btn btn-danger" id="delete"><i class="far fa-trash-alt"></i> Clear all</button>
-            </div>
+            <h5>Teacher: Mr. Jun Rey Ansing</h5>
           </div>
         </div>
-      </div>
     </div>
+
+  </div>
+
   </div>
 </body>
 <footer class="bg-white">
