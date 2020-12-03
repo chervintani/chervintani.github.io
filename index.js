@@ -11,6 +11,6 @@ app.use(express.static(path.join(__dirname + "/views")));
 
 app.get("/");
 
-http.listen(PORT, function () {
+http.listen(PORT,'0.0.0.0', function () {
   console.log("Server running on localhost: " + PORT);
 });
