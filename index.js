@@ -8,6 +8,7 @@ const http = require("http").Server(app);
 
 app.use(cors());
 app.use(express.static(path.join(__dirname + "/views")));
+app.use("/apk",express.static(path.join(__dirname + "/apk")));
 
 app.get("/");
 
