@@ -1,15 +1,16 @@
-const express = require('express')
-const app = express()
-const port = process.env.PORT||8080;
-const path = require('path')
-const http = require('http').Server(app)
+const express = require("express");
+const cors = require("cors");
+const PORT = process.env.PORT || 5000;
+const app = express();
+const path = require("path");
+//socket
+const http = require("http").Server(app);
 
-app.use(express.static(__dirname + "/public"))
+app.use(cors());
+app.use(express.static(path.join(__dirname + "/views")));
 
-app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'index.html'))
-});
+app.get("/");
 
-http.listen(port, ()=>{
-    console.log("Initializing server at port "+port)
+http.listen(PORT, function () {
+  console.log("Server running on localhost: " + PORT);
 });
